@@ -71,5 +71,3 @@ let livro = {
         break;
     }
   });
-  
-  console.log;
