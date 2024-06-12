@@ -9,7 +9,7 @@ let biblioteca = [];
 let opcao = 0;
 
 console.log(
-  "digite '1' para adicionar um livro, '3' para remover um livro, '2' para mostrar a biblioteca e '4' para pesquisar um livro"
+  "digite '1' para adicionar um livro, '2' para mostrar a biblioteca, '3' para remover um livro, '4' para pesquisar um livro e '5' para sair"
 );
 
 process.stdin.on("data", function (data) {
@@ -30,6 +30,7 @@ process.stdin.on("data", function (data) {
           console.log("digite genero");
         } else if (!livro.genero) {
           livro.genero = entradaUser;
+          console.log("livro adicionado, selecione a proxima opção e aperte ENTER")
           biblioteca.push(livro);
           livro = {
             nome: "",
@@ -54,6 +55,7 @@ process.stdin.on("data", function (data) {
               livros.tamanho
             );
           });
+          console.log("selecione a proxima opção e aperte ENTER")
         }
         break; 
 
@@ -73,6 +75,9 @@ process.stdin.on("data", function (data) {
           console.log("O livro não foi encontrado na biblioteca.");
           opcao = 0
         }
+        break;
+        case 5: 
+        process.exit()
         break;
     }
   }
